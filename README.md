@@ -1,6 +1,21 @@
 # teamwork_server_beacon
 Source SDK Plugin for providing server beacon.
 
+## Introduction
+
+## Signature verification
+
+A signature looks like this:
+`tw_beacon "v1:4:redsun:24-04-2018:MDwCHEP6WloptmfHX+ESBMpn38/hl1NJs4LfQtbX/BUCHGIhcUQbKKmNKMtk8/qvo1jPNpiEtwWbE9JZYA4="`
+
+A signature is made up of the following structure:
+
+`<version>:<sequence id>:<community provider id>:<valid signature until>:<actual signature>`
+
+The signature itself is signed by the public/private keypair of teamwork.tf. This signature has the following structure:
+
+`<sequence id>:<ip>:<port>:<community provider id>:<valid signature until>`
+
 ## How to install?
 
 * [Download this repository](https://github.com/teamworktf/teamwork_server_beacon/archive/master.zip) or check it out via git.
