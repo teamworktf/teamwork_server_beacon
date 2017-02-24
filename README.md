@@ -24,3 +24,4 @@ Source SDK Plugin for providing server beacon.
 * The `teamwork_beacon.dll` will appear in the `Debug` folder.
 * Copy this dll into the `Dist\addons\teamwork_beacon\bin` folder, replacing the old one.
 * Now follow the chapter above on how to install the plugin.
+=======
