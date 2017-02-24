@@ -9,6 +9,7 @@ Source SDK Plugin for providing server beacon.
 * Copy the contents of the .ZIP under `Dist\addons` into the `tf\addons` folder.
 * Open your `server.cfg`, and add the following line: `tw_beacon "<the-signature-you-got-from-the-site>"`
 * Restart server.
+* Verification: type `tw_version` and `tw_beacon` and see if it returns a value.
 
 ## How to build?
 
@@ -24,4 +25,3 @@ Source SDK Plugin for providing server beacon.
 * The `teamwork_beacon.dll` will appear in the `Debug` folder.
 * Copy this dll into the `Dist\addons\teamwork_beacon\bin` folder, replacing the old one.
 * Now follow the chapter above on how to install the plugin.
-=======
