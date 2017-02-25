@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdio.h>
+#include <cerrno>
 #include "interface.h"
 #include "filesystem.h"
 #include "engine/iserverplugin.h"
@@ -108,6 +108,8 @@ bool CServerBeaconPlugin::Load(	CreateInterfaceFn interfaceFactory, CreateInterf
 	{
 		return false; // we require all these interface to function
 	}
+
+	
 
 	MathLib_Init( 2.2f, 2.2f, 0.0f, 2.0f );
 	ConVar_Register( 0 );
@@ -238,11 +240,6 @@ PLUGIN_RESULT CServerBeaconPlugin::ClientConnect( bool *bAllowConnect, edict_t *
 	return PLUGIN_CONTINUE;
 }
 
-CON_COMMAND( tw_refresh_token, "Refresh the current token." )
-{
-
-}
-
 
 //---------------------------------------------------------------------------------
 // Purpose: called when a client types in a command (only a subset of commands however, not CON_COMMAND's)
@@ -292,4 +289,3 @@ CON_COMMAND( tw_version, "prints the version of the teamwork.tf beacon plugin" )
 // Purpose: an example cvar
 //---------------------------------------------------------------------------------
 static ConVar beacon_cvar("tw_beacon", "", FCVAR_NOTIFY, "teamwork.tf token to verify the ownership and community provider id.");
-static ConVar api_key_cvar("tw_api_key", "", FCVAR_PROTECTED, "teamwork.tf api key to request a new token automaticly, DO NOT SHARE THIS.");

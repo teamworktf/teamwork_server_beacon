@@ -89,6 +89,7 @@
     <ClInclude Include="..\..\public\vstdlib\vstdlib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\public\tier0\memoverride.cpp">
@@ -99,6 +100,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ResourceCompile Include="teamwork_beacon.rc" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="..\..\public\tier0\pointeroverride.asm">

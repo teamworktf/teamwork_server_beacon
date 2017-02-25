@@ -8,42 +8,23 @@ Source SDK Plugin that provides community server authentication and additional i
 
 ## Introduction
 
-This plugin allows people to identify your server as part of a larger community server community. This plugin will publish a unique beacon to the world, and with that beacon, anyone in the world can verify that your server is indeed part of a larger community provider. teamwork.tf will use this for the website, but the techologies are opensource and can be used by anyone.
+This plugin allows enitites to identify your server as part of a larger community server community. This plugin will publish a unique beacon to the world, and with that beacon, anyone in the world can verify that your server is indeed part of a larger community provider. teamwork.tf will use this for the website, but the techologies are opensource and can be used by anyone.
 
 This plugin can help websites that use TF2 gameserver information in one way or another to securely identify that a gameserver is part of a larger community. This will be for example useful to identify fake community servers, and helps websites provide additional details about these servers (e.g. the URL/Forum/Name/Image of the community provider).
 
-## Signature verification
-
-A signature looks like this:
-```
-tw_beacon "v1:4:redsun:24-04-2018:MDwCHEP6WloptmfHX+ESBMpn38/hl1NJs4LfQtbX/BUCHGIhcUQbKKmNKMtk8/qvo1jPNpiEtwWbE9JZYA4="
-```
-
-A signature is made up of the following structure:
-
-```
-<version>:<sequence id>:<community provider id>:<valid signature until>:<actual signature>
-```
-
-The signature itself (`<actual signature>`) is signed by the public/private keypair of teamwork.tf. This signature has the following structure:
-
-```
-<sequence id>:<ip>:<port>:<community provider id>:<valid signature until>
-```
-
-The public key to verify, as well as some examples to verify a signature is present in `/tools/`. There is also an online tool available [on this webpage](https://teamwork.tf/community/beacon/verify).
-
 ## How to install?
+*quick way*
 
-* [Download this repository](https://github.com/teamworktf/teamwork_server_beacon/archive/master.zip) or check it out via git.
+* [Download this repository](https://github.com/teamworktf/teamwork_server_beacon/archive/master.zip) or clone it via GIT.
 * Go to your TF2 server folder.
 * Navigate to `tf\addons`.
-* Copy the contents of the .ZIP under `dist\addons` into the `tf\addons` folder.
+* Copy the contents of the .ZIP under `dist\addons` into the `tf\addons` folder (result: `tf\addons\teamwork_beacon`).
 * Open your `server.cfg`, and add the following line: `tw_beacon "<the-signature-you-got-from-the-site>"`
-* Restart server.
-* Verification: type `tw_version` and `tw_beacon` and see if it returns a value.
+* Restart the gameserver.
+* Check if the plugin loaded by typing `tw_version` and `tw_beacon` in the console and see if it returns a value.
 
 ## How to build?
+*hard way, allows you to verify the code and develop on the plugin*
 
 * Download and install Visual Studio 2013 (2015 not tested).
 * Follow [this guide](https://developer.valvesoftware.com/wiki/Source_SDK_2013) to setup Source SDK 2013.
