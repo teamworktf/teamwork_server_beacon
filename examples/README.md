@@ -1,27 +1,29 @@
 # Examples
 
-This folder contains examples to verify a `tw_beacon` for yourself. There is a PHP and Python example, which can both be used to test live gameservers, but also has the ability to test offline.
+This folder contains examples to verify a `tw_beacon` for yourself. There is a PHP and Python example, which can both be used to test live gameservers, but also have the ability to test offline.
 
 ## Signature verification
 
 A signature looks like this:
 ```
-tw_beacon "v1:4:redsun:24-04-2018:MDwCHEP6WloptmfHX+ESBMpn38/hl1NJs4LfQtbX/BUCHGIhcUQbKKmNKMtk8/qvo1jPNpiEtwWbE9JZYA4="
+"v1:4:redsun:24-04-2018:MDwCHEP6WloptmfHX+ESBMpn38/hl1NJs4LfQtbX/BUCHGIhcUQbKKmNKMtk8/qvo1jPNpiEtwWbE9JZYA4="
 ```
 
-A signature is made up of the following structure:
+When the plugin is installed, it will create a ConVar which is exposed to anyone who will query for the server rule list. A signature is made up of the following structure:
 
 ```
-<version>:<sequence id>:<community provider id>:<valid signature until>:<actual signature>
+<version>:<sequence id>:<community provider id>:<valid signature until>:<base64 encoded signature frame>
 ```
 
-The signature itself (`<actual signature>`) is signed by the public/private keypair of teamwork.tf. This signature has the following structure:
+The signature itself (`<base64 encoded signature frame>`) is signed by the [public](https://github.com/teamworktf/teamwork_server_beacon/blob/master/examples/verification_key_teamwork.pem)/private keypair of teamwork.tf. This signature has the following structure:
 
 ```
 <sequence id>:<ip>:<port>:<community provider id>:<valid signature until>
 ```
 
-The public key to verify, as well as some examples to verify a signature is present in `/tools/`. There is also an online tool available [on this webpage](https://teamwork.tf/community/beacon/verify).
+## Verifying yourself
+
+Everything you need to verify a signature, is present in the `/examples/` folder. Here you can find the public key, as well as some code examples to verify a signature (without any intervention of teamwork.tf themselves).
 
 ### Revoked signatures
 
@@ -49,7 +51,7 @@ pip3 install pyopenssl
 pip3 install python-valve
 ```
 
-Also make sure you have openssl on your system (by defalt on most Linux systems). Then run it like this and follow the instructions:
+Also make sure you have OpenSSL on your system (by defalt on most Linux systems). Then run it like this and follow the instructions:
 
 ```
 ./verify_signature.py

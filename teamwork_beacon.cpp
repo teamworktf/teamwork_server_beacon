@@ -280,12 +280,13 @@ void CServerBeaconPlugin::FireGameEvent( KeyValues * event )
 //---------------------------------------------------------------------------------
 // Purpose: an example of how to implement a new command
 //---------------------------------------------------------------------------------
-CON_COMMAND( tw_version, "prints the version of the teamwork.tf beacon plugin" )
-{
-	Msg( "Version: 1.0\n" );
-}
+//CON_COMMAND( tw_version, "prints the version of the teamwork.tf beacon plugin" )
+//{
+//	Msg( "Version: 1.0\n" );
+//}
 
 //---------------------------------------------------------------------------------
 // Purpose: an example cvar
 //---------------------------------------------------------------------------------
-static ConVar beacon_cvar("tw_beacon", "", FCVAR_NOTIFY, "teamwork.tf token to verify the ownership and community provider id.");
+static ConVar beacon_cvar("tw_beacon", "", FCVAR_NOTIFY, "teamwork beacon to verify ownership and community provider id.");
+static ConVar v_beacon_cvar("tw_version", "version 1.0", FCVAR_NOTIFY, "teamwork beacon plugin version.");
