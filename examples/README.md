@@ -34,6 +34,10 @@ It might be possible that some keys become revoked before their revocation date.
 If you do not have the motivation / technical knowledge to run these examples by yourself, you can test any server at [this webpage](https://teamwork.tf/community/beacon/verify).
 
 
+## Binay example - Linux
+
+This example can run on any system without external dependencies (e.g. install PHP/Python). This is a compiled version of the Python script. Open a bash terminal and CD into the `examples/` folder. After this, execute `./verify_signature` and follow the instructions.
+
 ## PHP example
 
 This example can be run on any system that has PHP on it. Just run PHP with the filename, and follow the instructions on the screen. Note that this also required OpenSSL, which is by default on most Linux systems.

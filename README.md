@@ -21,7 +21,6 @@ If you want to verify a server, you can do so with [this online tool](https://te
 This sections is only relevant to people who run TF2 servers. In order for a server to emit a beacon, which others can verify, the server needs a plugin. The only function the plugin has, is that it allows you to set the `tw_beacon` ConVar in your server config. It does not do anything else!
 
 ### How to install the plugin?
-*quick way*
 
 1. Clone this repository on your server (`git clone https://github.com/teamworktf/teamwork_server_beacon.git`).
 2. Alternatively you can [download](https://github.com/teamworktf/teamwork_server_beacon/archive/master.zip) this repository and unzip it somewhere on your server.
@@ -41,7 +40,7 @@ By default, a beacon is valid for 1 year and 2 months. This means that you need 
 5. Execute `python request_beacon.py` (Linux) or `request_beacon.exe` (Windows).
 6. Follow the steps, it will automaticly write the signature into your server's config file.
 7. Make sure you restart the server.
-8. Check with the [online tool](https://teamwork.tf/community/beacon/verify), if it worked (might take up to 19 minutes).
+8. Check with the [online tool](https://teamwork.tf/community/beacon/verify), if it worked (wait at least 10 minutes before trying).
 9. Add a new item to your personal agenda, exactly one year from now with the title `REQUEST NEW TW TOKENS FOR SERVERS!!`.
 
 As said before, the beacon will only be valid for 1y2m, if the validity expires the token will be no longer valid. At this point the specification will ignore your beacon.

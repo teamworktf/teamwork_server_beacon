@@ -4,7 +4,8 @@ require __DIR__ . '/SourceQuery/bootstrap.php';
 use xPaw\SourceQuery\SourceQuery;
 
 $config = [
-	'public_key' => 'verification_key_teamwork.pem'
+	'public_key' => 'verification_key_teamwork.pem',
+	'revocation_list' => 'https://teamwork.tf/community/beacon/revoked',
 ];
 
 /**
@@ -20,6 +21,10 @@ function getServerSignature($ip, $port, $print_info = false) {
 		$rules = $query->GetRules();
 		if(isset($rules['tw_beacon'])) {
 			$beacon = $rules['tw_beacon'];
+		} else if(isset($rules['tw_version'])) {
+			if($print_info)	echo "[retrieval] Server is running the plugin, but the beacon is not set.\n";
+		} else {
+			if($print_info)	echo "[retrieval] Server is not running the plugin\n";
 		}
 	} catch(Exception $e) {
 		if($print_info)	echo $e->getMessage();
@@ -53,8 +58,20 @@ function verifySignature($ip, $port, $signature, $print_info = false) {
 		if($validation == true) {
 			# the signature is valid, but it might be expired. Be sure to always check the date!
 			if(strtotime($validUntil) >= strtotime('now')) {
-				if($print_info)	echo "[validation] VALID SIGNATURE: for $ip:$port.\n";
-				return true;
+				try {
+					$revoked = (array)json_decode(file_get_contents($config['revocation_list']));
+					if (array_key_exists(($providerId.'-'.$sequenceId), $revoked) &&  $revoked[($providerId.'-'.$sequenceId)] == 'R') {
+						if($print_info)	echo "[validation] INVALID SIGNATURE: revoked signature.\n";
+						return false;
+					} else {
+						if($print_info)	echo "[validation] VALID SIGNATURE: for $ip:$port.\n";
+						return true;
+					}
+				} catch(Exception $e) {
+					# Soft fail for revocation list: we do not want a single point of failure
+					if($print_info)	echo "[validation] VALID SIGNATURE: for $ip:$port (revocation lookup failed).\n";
+					return true;
+				}
 			} else {
 				if($print_info)	echo "[validation] INVALID SIGNATURE: expired signed date ($validUntil).\n";
 				return false;
@@ -82,7 +99,11 @@ function getSignatureInfo($ip, $port, $signature, $print_info = false) {
 			$providerId = $sigParts[2];
 			$validUntil = $sigParts[3];
 
-			return ['version' => $version, 'sequenceId' => $sequenceId, 'providerId' => $providerId, 'validUntil' => $validUntil];
+			return ['version' => $version, 
+					'sequenceId' => $sequenceId, 
+					'providerId' => $providerId, 
+					'providerContext' => 'https://teamwork.tf/community/provider/'.$providerId.'.json', 
+					'validUntil' => $validUntil];
 		} else {
 			return null;
 		}
