@@ -288,5 +288,5 @@ void CServerBeaconPlugin::FireGameEvent( KeyValues * event )
 //---------------------------------------------------------------------------------
 // Purpose: an example cvar
 //---------------------------------------------------------------------------------
-static ConVar beacon_cvar("tw_beacon", "", FCVAR_NOTIFY, "teamwork beacon to verify ownership and community provider id.");
+static ConVar beacon_cvar("tw_beacon", "", FCVAR_NOTIFY | FCVAR_ARCHIVE, "teamwork beacon to verify ownership and community provider id.");
 static ConVar v_beacon_cvar("tw_version", "version 1.0", FCVAR_NOTIFY, "teamwork beacon plugin version.");
