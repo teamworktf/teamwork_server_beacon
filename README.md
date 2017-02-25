@@ -3,6 +3,9 @@ Source SDK Plugin that provides community server authentication and additional i
 
 ![beacon icon](https://teamwork.tf/images/beacon-ico.png)
 
+
+[forum support](https://forum.teamwork.tf/t/development) | [teamwork.tf](https://teamwork.tf)
+
 ## Introduction
 
 This plugin allows people to identify your server as part of a larger community server community. This plugin will publish a unique beacon to the world, and with that beacon, anyone in the world can verify that your server is indeed part of a larger community provider. teamwork.tf will use this for the website, but the techologies are opensource and can be used by anyone.
