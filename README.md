@@ -1,5 +1,5 @@
 # teamwork_server_beacon
-Source SDK Plugin for providing server beacon.
+Source SDK Plugin that provides community server authentication and additional information.
 
 ![beacon icon](https://teamwork.tf/images/beacon-ico.png)
 
@@ -28,7 +28,7 @@ The signature itself (`<actual signature>`) is signed by the public/private keyp
 <sequence id>:<ip>:<port>:<community provider id>:<valid signature until>
 ```
 
-Public key to verify signature is present in `/tools/`.
+The public key to verify, as well as some examples to verify a signature is present in `/tools/`. There is also an online tool available [on this webpage](https://teamwork.tf/community/beacon/verify).
 
 ## How to install?
 
