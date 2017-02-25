@@ -17,7 +17,7 @@ def structUserConfig():
 		return {'api_key' : None, 'servers' : {}}
 
 config = {
-	'api_endpoint' : 'http://dev.teamwork.tf/community/beacon',
+	'api_endpoint' : 'https://teamwork.tf/community/beacon',
 	'ip_endpoint' : 'https://api.ipify.org',
 	'user_config' : structUserConfig(),
 }
