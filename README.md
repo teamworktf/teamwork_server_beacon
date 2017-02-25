@@ -37,7 +37,7 @@ By default, a beacon is valid for 1 year and 2 months. This means that you need 
 2. Log in with your Steam account on the website, and copy the API key that is under "Manage Community Provider".
 3. Now CD into the location where you unpacked/cloned this repository.
 4. CD into `tools/`.
-5. Execute `python request_beacon.py` (Linux) or `request_beacon.exe` (Windows).
+5. Execute `python request_beacon.py` (Windows/Linux) or `./request_beacon` (Linux). *Click [here to download python for Windows](https://www.python.org/ftp/python/3.4.4/python-3.4.4.amd64.msi), this only takes a minute.*
 6. Follow the steps, it will automaticly write the signature into your server's config file.
 7. Make sure you restart the server.
 8. Check with the [online tool](https://teamwork.tf/community/beacon/verify), if it worked (wait at least 10 minutes before trying).
