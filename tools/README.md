@@ -4,7 +4,7 @@ This folder contains scripts/binaries to automate the beacon retrieval.
 
 ## Requesting a beacon
 
-CD into `tools/` and execute `python request_beacon.py` (Windows/Linux) or `./request_beacon` (Linux, without Python).
+CD into `tools/` and execute `python request_beacon.py` (Windows/Linux, make sure you have `python-valve` installed, `pip3 install python-valve`) or `./request_beacon` (Linux, without Python).
 
 After entering  your API key you got from teamwork.tf, you will be presented with three options:
 
