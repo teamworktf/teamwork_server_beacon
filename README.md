@@ -42,12 +42,14 @@ By default, a beacon is valid for 1 year and 2 months. This means that you need 
 7. Enter IP/Port of your server, and give the location of your `server.cfg` once it asks for the .cfg file.
 7. Make sure you restart the server.
 8. Learn here how to [verify/check a signature](https://github.com/teamworktf/teamwork_server_beacon/tree/master/examples) *(wait at least 10 minutes for the online tool)*.
-9. Learn how to automate the beacon refreshing [here](https://github.com/teamworktf/teamwork_server_beacon/tree/master/tools), or just make a reminder a year from now that you need to refresh the token (outdated tokens are invalid).
+9. Learn how to automate the beacon refreshing [here](https://github.com/teamworktf/teamwork_server_beacon/tree/master/tools), or just make a reminder a year from now that you need to refresh the beacon (outdated beacons are invalid).
 
-As said before, the beacon will only be valid for 1y2m, if the validity expires the token will be no longer valid. At this point the specification will ignore your beacon.
+As said before, the beacon will only be valid for 1y2m, if the validity expires the beacon will be no longer valid. At this point the specification will ignore your beacon.
 
 ### How to build the plugin?
 *OPTIONAL STEP, only recommended if you want to verify the code itself.*
+
+** Windows **
 
 1. Download and install Visual Studio 2013.
 2. Follow [this guide](https://developer.valvesoftware.com/wiki/Source_SDK_2013) to setup Source SDK 2013.
@@ -58,6 +60,21 @@ As said before, the beacon will only be valid for 1y2m, if the validity expires 
 7. Open the solution file (.sln)
 8. To see the plugin contents, look at `teamwork_beacon.cpp`.
 9. Right click and choose `Build Solution` to build the plugin.
-10. The `teamwork_beacon.dll` will appear in the `Debug` folder.
-11. Copy this `teamwork_beacon.dll` into the `Dist\addons\teamwork_beacon\bin` folder, replacing the old one.
+10. The `teamwork_beacon.dll` will appear in the `debug` folder.
+11. Copy this `teamwork_beacon.dll` into the `dist\addons\teamwork_beacon\bin` folder, replacing the old one.
+12. Now follow the chapter above on how to install the plugin.
+
+** Linux **
+
+1. Download and install CodeLite.
+2. Follow [this guide](https://developer.valvesoftware.com/wiki/Source_SDK_2013) to setup Source SDK 2013.
+3. CD to the root folder of the source sdk.
+4. `cd mp\src\utils\`
+5. `git clone https://github.com/teamworktf/teamwork_server_beacon.git`
+6. Now open Code Lite and navigate to the `teamwork_server_beacon` folder located in `<source-sdk>\mp\src\utils\`.
+7. Open the project file (.project)
+8. To see the plugin contents, look at `teamwork_beacon.cpp`.
+9. Build the solution to check if its working.
+10. The `teamwork_beacon.so` will appear in the `../../game/bin/` folder.
+11. Copy this `teamwork_beacon.so` into the `dist\addons\teamwork_beacon\bin` folder, replacing the old one.
 12. Now follow the chapter above on how to install the plugin.

@@ -13,11 +13,11 @@ After entering  your API key you got from teamwork.tf, you will be presented wit
 * `request-rcon` : Request a beacon, and automatically set this on your server **warning:** this is not permanent, the beacon will be lost on server restart.
 * `refresh-all` : Refresh all beacons, that you requested via `request-file` or `request-rcon`.
 
-It is important you refresh your tokens at least once a year! Tokens that are no longer valid, means that your server will not be authenticated towards this service. Either set a reminder in your calendar, or automate the retrieval.
+It is important you refresh your beacons at least once a year! Beacons that are no longer valid, means that your server will not be authenticated towards this service. Either set a reminder in your calendar, or automate the retrieval.
 
 ## Automation
 
-To make sure that your server have valid signatures, you need to periodicly refresh your tokens. I'd advise using `crontab` to trigger this Python script, and afterwards to restart your server.
+To make sure that your server have valid signatures, you need to periodicly refresh your beacons. I'd advise using `crontab` to trigger this Python script, and afterwards to restart your server.
 
 1. Add all your servers (IP:PORT, and location of the `server.cfg`) to the request tool by executing `request-file` for all of those servers.
 2. Verify that all the servers are stored in the tools config (`user_config.json`).
