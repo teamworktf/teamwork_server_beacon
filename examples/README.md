@@ -26,8 +26,8 @@ php verify_signature.php
 Python 3 required. First install these depencies via PIP:
 
 ```
-pip3 install pyopenssl
-pip3 install python-valve
+pip install pyopenssl
+pip install python-valve
 ```
 
 Also make sure you have OpenSSL on your system (by defalt on most Linux systems). Then run it like this and follow the instructions:

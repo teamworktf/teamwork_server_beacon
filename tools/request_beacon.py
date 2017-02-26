@@ -2,10 +2,13 @@
 from datetime import datetime
 import urllib.request
 import json
-from valve.rcon import RCON
-import logging
 import sys
 import os 
+if sys.platform == 'win32':
+	from valve.source.rcon import RCON
+else:
+	from valve.rcon import RCON
+import logging
 
 #
 #		Config
