@@ -13,7 +13,8 @@ After entering  your API key you got from teamwork.tf, you will be presented wit
 * `request-rcon` : Request a beacon, and automatically set this on your server **warning:** this is not permanent, the beacon will be lost on server restart.
 * `refresh-all` : Refresh all beacons, that you requested via `request-file` or `request-rcon`.
 
-It is important you refresh your beacons at least once a year! Beacons that are no longer valid, means that your server will not be authenticated towards this service. Either set a reminder in your calendar, or automate the retrieval.
+It is important you refresh your beacons at least once a year! Beacons that are no longer valid, means that your server will not be authenticated towards this service. Either set a reminder in your calendar, or automate the retrieval. Note that your signature is bound to your IP:PORT; if you run the gameserver on a non-static IP adress, you need to update the beacon everytime your IP changes.
+
 
 ## Automation
 
