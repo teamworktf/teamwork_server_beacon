@@ -49,7 +49,7 @@ As said before, the beacon will only be valid for 1y2m, if the validity expires 
 ### How to build the plugin?
 *OPTIONAL STEP, only recommended if you want to verify the code itself.*
 
-** Windows **
+**Windows**
 
 1. Download and install Visual Studio 2013.
 2. Follow [this guide](https://developer.valvesoftware.com/wiki/Source_SDK_2013) to setup Source SDK 2013.
@@ -64,7 +64,7 @@ As said before, the beacon will only be valid for 1y2m, if the validity expires 
 11. Copy this `teamwork_beacon.dll` into the `dist\addons\teamwork_beacon\bin` folder, replacing the old one.
 12. Now follow the chapter above on how to install the plugin.
 
-** Linux **
+**Linux**
 
 1. Download and install CodeLite.
 2. Follow [this guide](https://developer.valvesoftware.com/wiki/Source_SDK_2013) to setup Source SDK 2013.
