@@ -67,7 +67,7 @@ def setSignatureViaFile(file_location, signature):
 			lines.append(line)
 
 	if isSet == False:
-		lines.append('tw_beacon "'+signature+'"')
+		lines.append("\ntw_beacon \""+signature+'"')
 
 	with open(file_location, 'w') as outfile:
 		for line in lines:
