@@ -41,7 +41,7 @@ By default, a beacon is valid for 1 year and 2 months. This means that you need 
 6. Set the API key, and choose `request-file`, to set the beacon permanently (RCON is gone after a server restart).
 7. Enter IP/Port of your server, and give the location of your `server.cfg` once it asks for the .cfg file.
 7. Make sure you restart the server.
-8. Learn here how to [verify/check a signature](https://github.com/teamworktf/teamwork_server_beacon/tree/master/examples) *(wait at least 10 minutes for the online tool)*.
+8. Learn here how to [verify/check a signature](https://github.com/teamworktf/teamwork_server_beacon/tree/master/examples).
 9. Learn how to automate the beacon refreshing [here](https://github.com/teamworktf/teamwork_server_beacon/tree/master/tools), or just make a reminder a year from now that you need to refresh the beacon (outdated beacons are invalid).
 
 As said before, the beacon will only be valid for 1y2m, if the validity expires the beacon will be no longer valid. At this point the specification will ignore your beacon. Note that your signature is bound to your IP:PORT; if you run the gameserver on a non-static IP adress, you need to update the beacon everytime your IP changes.
