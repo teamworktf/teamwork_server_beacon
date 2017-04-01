@@ -1,3 +1,6 @@
+**[DEPRECATED] This has been replaced with RCON validation on teamwork.tf due to server providers not understanding what to do.**
+
+
 # teamwork_server_beacon
 Source SDK Plugin that provides community server authentication and additional information.
 
